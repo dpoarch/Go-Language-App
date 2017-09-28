@@ -1,0 +1,20 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+<div style="margin-top: 50px; padding: 40px;">
+	<h2>Create New User</h2>
+	  
+	<form method="POST" action="insert">
+	  <div class="form-group">
+	    <label for="email">Email address:</label>
+	    <input type="email" class="form-control" name="email" id="email">
+	  </div>
+	  <div class="form-group">
+	    <label for="name">Name:</label>
+	    <input type="text" class="form-control" name="name" id="name">
+	  </div>
+	  <button type="submit" class="btn btn-default">Save User</button>
+	</form>
+</div>
+  {{ template "Footer" }}
+{{ end }}

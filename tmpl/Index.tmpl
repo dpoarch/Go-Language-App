@@ -1,0 +1,30 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+
+<div style="margin-top: 50px; padding: 40px;">
+    <h2> Users </h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <td>{{ .Id }}</td>
+          <td> {{ .Name }} </td>
+          <td>{{ .Email }} </td> 
+          <td><a href="/show?id={{ .Id }}">View</a> | <a href="/edit?id={{ .Id }}">Edit</a> | <a href="/delete?id={{ .Id }}">Delete</a></td>
+        </tr>
+      {{ end }}
+      </tbody>
+    </table>
+  </div>
+    
+  {{ template "Footer" }}
+{{ end }}
